@@ -8,8 +8,7 @@ url = "https://www.animeout.xyz/"
 resp, st_code = UrlCheck(url).st_code()
 if st_code == 200:
     print("exists")
-    # inp_name = input("Type the anime name you want to search : ")
-    inp_name = "boruto"
+    inp_name = input("Type the anime name you want to search : ")
     res = SearchAnime(inp_name).search_anime()
     lists = SearchAnime.soup_extract(res)
     print(lists)
