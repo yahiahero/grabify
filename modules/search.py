@@ -15,13 +15,14 @@ class SearchAnime:
     def soup_extract(r):
         soup = BS(r, 'lxml')
         li = soup.select(".post-item")
-        num = 0
         lists = {}
+        num = 0
         for articles in li:
-            title = soup.select(".post-title a").getText()
-            lists.update({num: title})
+            a_loc = articles.select('.post-title a')
             num = num + 1
+            for resul in a_loc:
+                links = resul.attrs['href']
+                title = resul.getText()
+                lists[num] = {"Title": title, "Link": links}
         return lists
-
-    # // article[] / div / div / h3 / a xpath selector
 
