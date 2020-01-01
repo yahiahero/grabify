@@ -12,19 +12,15 @@ resp, st_code = UrlCheck(url).st_code()
 if st_code == 200:
     print(" Link exists")
     # inp_name = input("Type the anime name you want to search : ")
-    inp_name = "boruto"
+    inp_name = "one punch man"
     res = SearchAnime(inp_name).search_anime()
     lists = SearchAnime.soup_extract(res)
 
     # print(Choose(lists).anime())
     print(lists)
-    num = 1
-    key2 = 0
-    for key in lists:
-        con = str(f'{lists[key]}')
-        con.replace("{}''", '')
-        print(f'{num}-->>{con}')
-        num = num + 1
+    # enumerate turns sequence to pair by numbering; from start=int
+    for k, v in enumerate(lists.keys(), start=1):
+        print(f'{k} ==> Title: {v} || Link: {lists[v]}')
 
     # choice = int(input("Type the number of anime you want to watch"))
     # # try:

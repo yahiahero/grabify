@@ -8,6 +8,7 @@ class UrlCheck:
     def st_code(self):
         url = self.link
         r = requests.get(url)
-        resp = r.text
+        # this isn't used yet
+        # resp = r.text
         return r, r.status_code
 
