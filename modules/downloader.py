@@ -33,4 +33,4 @@ class Downloader():
         # header = self.header
 
     def download_chunks(self):
-        pas
+        pass
